@@ -1,0 +1,54 @@
+﻿Program.cs
+
+namespace ClassesAbstratas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Documento documento = new Documento();
+            Foto foto = new Foto();
+            documento.Salvar();
+            foto.Salvar();
+        }
+    }
+}
+
+
+Isalvavel.cs
+
+namespace ClassesAbstratas
+{
+    interface ISalvavel
+    {
+        void Salvar();
+    }
+}
+
+
+Foto.cs
+
+namespace ClassesAbstratas
+{
+    class Foto : ISalvavel
+    {
+        public void Salvar()
+        {
+            Console.WriteLine("Salvando a foto em formato .JPG");
+        }
+    }
+}
+
+
+Documento.cs
+
+namespace ClassesAbstratas
+{
+    class Documento : ISalvavel
+    {
+        public void Salvar()
+        {
+            Console.WriteLine("Salvando documento em formato .DOC");
+        }
+    }
+}

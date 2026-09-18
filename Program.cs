@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Classe_Abstrata
+namespace ClassesAbstratas
 {
     internal class Program
     {

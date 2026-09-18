@@ -2,7 +2,7 @@
 ---------------------------------------------------
 using System;
 
-namespace Classe_Abstrata
+namespace ClassesAbstratas
 {
     internal class Arco : Arma
     {
@@ -17,7 +17,7 @@ Arma.cs:
 -----------------------------------------------------
 using System;
 
-namespace Classe_Abstrata
+namespace ClassesAbstratas
 {
     internal abstract class Arma
     {
@@ -37,7 +37,7 @@ Espada.cs:
 ------------------------------------------------------
 using System;
 
-namespace Classe_Abstrata
+namespace ClassesAbstratas
 {
     internal class Espada : Arma
     {
@@ -52,7 +52,7 @@ Program.cs:
 -------------------------------------------------------
 using System;
 
-namespace Classe_Abstrata
+namespace ClassesAbstratas
 {
     internal class Program
     {

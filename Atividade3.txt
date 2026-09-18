@@ -1,0 +1,74 @@
+﻿Drone.cs:
+------------------------------
+using System;
+
+namespace ClassesAbstratas
+{
+    internal class Drone : ICamera, IVoavel
+    {
+        public void TirarFoto()
+        {
+            Console.WriteLine("TIRANDO FOTO PANORÂMICA...");
+        }
+
+        public void Decolar()
+        {
+            Console.WriteLine("DRONE DECOLANDO VERTICALMENTE...");
+        }
+
+        public void Pousar()
+        {
+            Console.WriteLine("DRONE POUSANDO SUAVEMENTE...");
+        }
+    }
+}
+--------------------------------------------
+ICamera.cs:
+-------------------------------------------
+using System;
+
+namespace ClassesAbstratas
+{
+    public interface ICamera
+    {
+        void TirarFoto();
+    }
+}
+---------------------------------------------
+IVoavel.cs:
+---------------------------------------------
+using System;
+
+namespace ClassesAbstratas
+{
+    public interface IVoavel
+    {
+        void Decolar();
+        void Pousar();
+    }
+}
+-----------------------------------------------
+Program.cs:
+-----------------------------------------------
+using System;
+
+namespace ClassesAbstratas
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          Console.WriteLine();
+            var drone = new Drone();
+
+           
+            ICamera camera = drone;
+            camera.TirarFoto();
+
+           
+            IVoavel voavel = drone;
+            voavel.Decolar();
+            voavel.Pousar();
+        }
+    }
+}

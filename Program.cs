@@ -1,13 +1,21 @@
-﻿namespace ClassesAbstratas
+﻿using System;
+
+namespace Classe_Abstrata
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Documento documento = new Documento();
-            Foto foto = new Foto();
-            documento.Salvar();
-            foto.Salvar();
+
+            var espada = new Espada { Nome = "Excalibur", DanoBase = 10 };
+            var arco = new Arco { Nome = "Arco Longo", DanoBase = 7 };
+
+            Console.WriteLine();
+            espada.ExibirInfo();
+            Console.WriteLine($"Ataque crítico da espada: {espada.CalcularAtaqueCritico()}");
+
+            arco.ExibirInfo();
+            Console.WriteLine($"Ataque crítico do arco: {arco.CalcularAtaqueCritico()}");
         }
     }
 }

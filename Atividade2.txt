@@ -1,0 +1,73 @@
+﻿Arco.cs:
+---------------------------------------------------
+using System;
+
+namespace Classe_Abstrata
+{
+    internal class Arco : Arma
+    {
+        public override int CalcularAtaqueCritico()
+        {
+            return DanoBase * 3;
+        }
+    }
+}
+------------------------------------------------------
+Arma.cs:
+-----------------------------------------------------
+using System;
+
+namespace Classe_Abstrata
+{
+    internal abstract class Arma
+    {
+        public string Nome { get; set; }
+        public int DanoBase { get; set; }
+
+        public void ExibirInfo()
+        {
+            Console.WriteLine($"Nome: {Nome} | Dano base: {DanoBase}");
+        }
+
+        public abstract int CalcularAtaqueCritico();
+    }
+}
+------------------------------------------------------
+Espada.cs:
+------------------------------------------------------
+using System;
+
+namespace Classe_Abstrata
+{
+    internal class Espada : Arma
+    {
+        public override int CalcularAtaqueCritico()
+        {
+            return DanoBase * 2;
+        }
+    }
+}
+-------------------------------------------------------
+Program.cs:
+-------------------------------------------------------
+using System;
+
+namespace Classe_Abstrata
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+         
+            var espada = new Espada { Nome = "Excalibur", DanoBase = 10 };
+            var arco = new Arco { Nome = "Arco Longo", DanoBase = 7 };
+
+            Console.WriteLine();
+            espada.ExibirInfo();
+            Console.WriteLine($"Ataque crítico da espada: {espada.CalcularAtaqueCritico()}");
+
+            arco.ExibirInfo();
+            Console.WriteLine($"Ataque crítico do arco: {arco.CalcularAtaqueCritico()}");
+        }
+    }
+}
